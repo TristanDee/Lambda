@@ -1,0 +1,1001 @@
+/* :: FONTS :: */
+@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic:700|Lato|Open+Sans|Yeseva+One');
+
+// font-family: 'Yeseva One', cursive;
+// font-family: 'Gentium Book Basic', serif;
+// font-family: 'Lato', sans-serif;
+// font-family: 'Open Sans', sans-serif;
+
+
+/* :: BARIABLES & FUNCTIONS :: */
+$colors: (
+    nav-bg: #0b3954,
+    yellow: #dab33e,
+    gold: #cc9900,
+    white: #ffffff,
+    text: #4c4c4c,
+    trans_black: rgba(0, 0, 0, 0.4),
+    trans_white: rgba(255, 255, 255, 0.4),
+    footer-bg: #191919
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name)
+};
+
+
+/* :: RESETS :: */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    color: color(text);
+  }
+}
+
+.container {
+  width: 1210px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+/* :: COMMONS :: */
+// BUTTONS
+.btn {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 22px 55px;
+  color: color(white);
+  transition: 300ms;
+  &:hover {
+    color: color(gold);
+  }
+}
+
+// PLACEHOLDERS
+::-webkit-input-placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: italic;
+}
+::-moz-placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: italic;
+}
+::-ms-input-placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: italic;
+}
+::placeholder {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-style: italic;
+}
+
+
+/* :: STYLES Start :: */
+
+// LAMBDA HEADER
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  background-image: url(../img/banner_top.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 760px;
+  header {
+    .logo {
+      float: left;
+      height: 110px;
+      line-height: 110px;
+    }
+    nav {
+      float: left;
+      ul {
+        margin: 0 15px 0 80px;
+        padding: 0;
+        display: flex;
+        li {
+          list-style: none;
+          margin-right: 40px;
+          position: relative;
+          &:last-child {
+            margin-right: 0;
+          }
+          a {
+            font-family: "Gentium Book Basic", serif;
+            font-size: 21px;
+            font-weight: 700;
+            color: color(white);
+            letter-spacing: 1px;
+            height: 110px;
+            line-height: 110px;
+            padding: 0 10px;
+            display: block;
+            transition: 300ms;
+            &:hover {
+              color: color(gold);
+            }
+            &::before {
+              content: "";
+              display: block;
+              height: 3px;
+              background-color: color(white);
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              transform: scale(0, 1);
+              transform-origin: left;
+              transition: transform ease-in-out 300ms;
+            }
+            &:hover::before {
+              transform: scale(1, 1);
+            }
+          }
+        }
+      }
+    }
+    .social {
+      height: 110px;
+      line-height: 110px;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+          display: inline-block;
+          a {
+            font-size: 20px;
+            color: color(yellow);
+            padding: 0 10px;
+            transition: 300ms;
+            &:hover {
+              color: color(white);
+            }
+          }
+        }
+      }
+    }
+    .menu-toggle {
+      float: right;
+      color: color(white);
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+    }
+  }
+  .hero-cta {
+    text-align: center;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .hero {
+      width: 1000px;
+      margin-bottom: 40px;
+      h1 {
+        font-family: "Yeseva One", serif;
+        font-size: 90px;
+        text-transform: lowercase;
+        color: color(white);
+        margin-top: 0;
+        margin-bottom: 40px;
+      }
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 40px;
+      .btn-black {
+        background-color: color(trans_black);
+        border: 1px solid #000000;
+        margin-right: 15px;
+      }
+      .btn-white {
+        background-color: color(trans_white);
+        border: 1px solid #ffffff;
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+// LAMBDA COOK REVIEW
+#review {
+  position: absolute;
+  top: 760px;
+  left: 0;
+  right: 0;
+  background: url(../img/bg-pattern_01.png);
+  .container {
+    display: flex;
+    justify-content: space-around;
+    .cookReview {
+      margin-top: 75px;
+      margin-bottom: 40px;
+      text-align: center;
+      h1 {
+        font-family: "Yeseva One", serif;
+        font-size: 36px;
+        color: color(gold);
+        margin-bottom: 20px;
+      }
+      p {
+        width: 410px;
+        line-height: 22px;
+        margin-bottom: 50px;
+      }
+    }
+    .dish {
+      margin-top: 75px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+}
+
+// INGREDIENTS
+#ingredients {
+  position: absolute;
+  top: 1470px;
+  left: 0;
+  right: 0;
+  background: url(../img/banner_middle.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 760px;
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    .ingredient-box-bg {
+      width: 570px;
+      height: 570px;
+      margin-top: 100px;
+      background-color: rgba(0, 0, 0, 0.6);
+      .ingredient-box {
+        margin: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h1 {
+          font-family: "Yeseva One", serif;
+          font-size: 36px;
+          color: color(white);
+          margin: 0 0 20px;
+        }
+        img {
+          margin: 0 0 20px;
+        }
+        p {
+          width: 410px;
+          color: color(white);
+          line-height: 22px;
+          text-align: center;
+          margin: 0 0 70px;
+        }
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+// LAMBDA MENUS
+#lambdaMenus {
+  position: absolute;
+  top: 2230px;
+  left: 0;
+  right: 0;
+  background: url(../img/bg-pattern_02.png);
+  .column {
+    column-count: 2;
+    column-gap: 160px;
+    margin: 90px 0;
+    .menu {
+      margin: 60px 0;
+      &:first-child {
+        margin-top: 0;
+      }
+      .menu-head {
+        text-align: center;
+        margin-bottom: 20px;
+        h2 {
+          font-family: "Yeseva One", serif;
+          font-size: 36px;
+          color: color(gold);
+          margin-bottom: 20px;
+        }
+      }
+      .appetiser {
+        h2 {
+          margin-top: 0;
+        }
+      }
+      .menu-list {
+        padding: 0 10px;
+        position: relative;
+        .menu-item {
+          margin-bottom: 20px;
+          .menu-name {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid color(gold);
+            h3 {
+              font-family: "Yeseva One", serif;
+              font-size: 21px;
+              color: color(gold);
+              margin: 10px 0;
+            }
+          }
+        }
+        .special01,
+        .special02 {
+          padding: 10px;
+          border: 1px solid color(gold);
+        }
+        .special01::before,
+        .special02::before {
+          content: "Special";
+          font-size: 14px;
+          background-color: color(gold);
+          color: color(white);
+          padding: 5px 10px;
+          position: absolute;
+          top: 74px;
+          right: 10px;
+        }
+      }
+    }
+  }
+}
+
+// GUEST REVIEWS
+#guestReviews {
+  position: absolute;
+  top: 3350px;
+  left: 0;
+  right: 0;
+  background: url(../img/banner_bottom.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 760px;
+  .review-box-bg {
+    width: 775px;
+    height: 560px;
+    margin: 100px auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    .review-box {
+      margin: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      h1 {
+        font-family: "Yeseva One", serif;
+        font-size: 36px;
+        color: color(white);
+        margin: 80px 0 20px;
+      }
+      img {
+        margin: 0 0 20px;
+      }
+      p {
+        font-family: "Gentium Book Basic", serif;
+        font-size: 25px;
+        width: 630px;
+        color: color(white);
+        line-height: 40px;
+        text-align: center;
+        margin: 0 0 30px;
+        &::before {
+          content: '"';
+          font-family: "Yeseva One", serif;
+          font-size: 90px;
+          color: #f2f4f4;
+          position: absolute;
+          top: 180px;
+          left: -30px;
+        }
+      }
+      small {
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+        color: color(white);
+      }
+    }
+  }
+}
+
+// BOOKING
+#booking {
+  position: absolute;
+  top: 4110px;
+  left: 0;
+  right: 0;
+  background: url(../img/bg-pattern_01.png);
+  .booking-card {
+    display: flex;
+    margin: 100px 0;
+    .right-food-img {
+      width: 570px;
+      column-count: 2;
+    }
+    .booking-for-food {
+      width: 430px;
+      margin-left: 108px;
+      text-align: center;
+      .right-food {
+        margin-bottom: 40px;
+        h1 {
+          font-family: "Yeseva One", serif;
+          font-size: 36px;
+          color: color(gold);
+          margin: 0 0 20px;
+        }
+        p {
+          line-height: 24px;
+        }
+      }
+      .booking-form {
+        width: 430px;
+        column-count: 2;
+        text-align: left;
+        form {
+          margin-bottom: 7px;
+          label {
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: color(gold);
+            display: block;
+            margin-bottom: 6px;
+          }
+          input {
+            margin-bottom: 15px;
+            width: 200px;
+            height: 36px;
+            padding-left: 10px;
+            border: 1px solid #c8c6c6;
+            &:focus {
+              border: 1px solid color(gold);
+            }
+          }
+        }
+        .calendar-form {
+          position: relative;
+          span {
+            position: absolute;
+            right: 15px;
+            top: 32px;
+          }
+        }
+      }
+      input[type="submit"] {
+        width: 200px;
+        height: 36px;
+        background-color: color(gold);
+        border: none;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        color: color(white);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// FOOTER
+footer {
+  position: absolute;
+  top: 4800px;
+  left: 0;
+  right: 0;
+  padding: 90px 0;
+  background-color: color(footer-bg);
+  color: color(white);
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-column-gap: 20px;
+    .about,
+    .opening-hours,
+    .location {
+      text-align: center;
+      h3 {
+        font-family: "Yeseva One", serif;
+        font-size: 21px;
+        letter-spacing: 1px;
+      }
+      p {
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        line-height: 26px;
+      }
+    }
+    .about {
+      grid-column: 1 / 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        width: 345px;
+      }
+    }
+    .opening-hours {
+      .paymethod {
+        ul {
+          list-style: none;
+          margin: 70px 0 0;
+          padding: 0;
+          li {
+            display: inline-block;
+            padding: 0 5px;
+          }
+        }
+      }
+    }
+    .location {
+      .social-links {
+        ul {
+          list-style: none;
+          margin: 70px 0 0;
+          padding: 0;
+          li {
+            display: inline-block;
+            padding: 0 5px;
+            a {
+              color: color(white);
+              transition: 300ms;
+              &:hover {
+                color: color(gold);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/* :: MEDIA QUERIES :: */
+
+// SCREEN 1200px
+@media screen and (max-width: 1200px) {
+  #header {
+    .container {
+      position: absolute;
+      width: 100%;
+      header {
+        margin: 0 20px;
+        nav {
+          display: block;
+          position: absolute;
+          width: 100%;
+          // height: calc(100vh - 110px);
+          top: 110px;
+          left: -100%;
+          background-color: rgba(0, 0, 0, 0.9);
+          transition: all 300ms ease;
+          &.active {
+            left: 0;
+          }
+          ul {
+            display: block;
+            text-align: center;
+            a {
+              border-bottom: 1px solid color(gold);
+            }
+          }
+        }
+        .social {
+          float: left;
+          margin-left: 20px;
+          a {
+            color: color(white);
+          }
+        }
+        .menu-toggle {
+          display: block;
+          float: right;
+          height: 110px !important;
+          line-height: 110px !important;
+        }
+      }
+      .hero-cta {
+        width: 900px;
+        margin: 200px auto 0;
+        .hero {
+          width: 850px;
+          h1 {
+            font-size: 70px;
+          }
+        }
+        .cta {
+          .btn {
+            padding: 15px 45px;
+          }
+        }
+      }
+    }
+  }
+
+  #ingredients {
+    .container {
+      width: 100%;
+      .ingredient-box-bg {
+        margin-right: 100px;
+      }
+    }
+  }
+
+  #lambdaMenus {
+    .container {
+      width: 100%;
+      .column {
+        margin: 90px 15px;
+      }
+    }
+  }
+
+  #booking {
+    .booking-card {
+      margin-left: 50px;
+    }
+    .booking-for-food {
+      margin-right: 50px;
+    }
+  }
+}
+
+
+// SCREEN 900px
+@media screen and (max-width: 900px) {
+  #header {
+    .hero-cta {
+      width: 750px !important;
+      margin: 350px auto 0;
+      .hero {
+        width: 600px !important;
+      }
+    }
+  }
+
+  #review {
+    .container {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      .cookReview {
+        margin-top: 45px;
+        margin-bottom: 20px;
+      }
+      .dish {
+        margin-top: 45px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  #ingredients {
+    top: 2040px;
+    .container {
+      width: 100%;
+    }
+  }
+
+  #lambdaMenus {
+    top: 2800px;
+    .column {
+      column-gap: 80px;
+    }
+    .menu-head {
+      h2 {
+        font-size: 30px !important;
+      }
+    }
+    .special01::before,
+    .special02::before {
+      top: 92px !important;
+    }
+  }
+
+  #guestReviews {
+    top: 3900px;
+    .container {
+      width: 100%;
+    }
+  }
+
+  #booking {
+    top: 4660px;
+    .container {
+      width: 100%;
+      .booking-card {
+        display: block;
+        margin-left: 160px;
+        .right-food-img {
+          display: block;
+          margin-bottom: 80px;
+        }
+      }
+    }
+  }
+
+  footer {
+    top: 5950px;
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+
+// SCREEN 650px
+@media screen and (max-width: 650px) {
+  #header {
+    .hero-cta {
+      width: 400px !important;
+      margin: 250px auto 0;
+      .hero {
+        width: 300px !important;
+        h1 {
+          font-size: 50px !important;
+        }
+      }
+      .cta {
+        .btn {
+          display: block;
+        }
+        .btn-black {
+          margin: 0 0 20px;
+        }
+        .btn-white {
+          margin: 20px 0 0;
+        }
+      }
+    }
+  }
+
+  #ingredients {
+    .ingredient-box-bg {
+      width: 500px !important;
+      margin: 100px auto !important;
+      .ingredient-box {
+        margin: 40px !important;
+      }
+    }
+  }
+
+  #lambdaMenus {
+    .column {
+      column-gap: 50px;
+    }
+  }
+
+  #guestReviews {
+    .review-box-bg {
+      width: 500px;
+      height: auto;
+      margin: 70px auto;
+      .review-box {
+        margin: 40px;
+        p {
+          width: 400px;
+        }
+      }
+    }
+  }
+
+  #booking {
+    .booking-card {
+      margin-left: 40px !important;
+    }
+    .booking-for-food {
+      margin-left: 70px !important;
+    }
+  }
+
+  footer {
+    .container {
+      grid-template-columns: 1fr;
+      .about,
+      .opening-hours,
+      .location {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}
+
+
+// SCREEN 500px
+@media screen and (max-width: 500px) {
+  #review {
+    .dish {
+      img {
+        width: 400px;
+      }
+    }
+  }
+
+  #ingredients {
+    top: 1800px;
+    .ingredient-box-bg {
+      width: 350px !important;
+      .ingredient-box {
+        p {
+          width: 190px !important;
+          text-align: left !important;
+          margin: 0 0 40px !important;
+        }
+        ul {
+          li {
+            img {
+              width: 85px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #lambdaMenus {
+    top: 2550px;
+    .column {
+      column-count: 1;
+      column-gap: 20px;
+    }
+    .menu-head {
+      h2 {
+        font-size: 26px !important;
+      }
+    }
+    .menu-name {
+      h3 {
+        font-size: 18px !important;
+      }
+    }
+    .special01::before,
+    .special02::before {
+      top: 70px !important;
+    }
+  }
+
+  #guestReviews {
+    top: 4500px;
+    .review-box-bg {
+      width: 350px;
+      height: auto;
+      margin: 40px auto;
+      .review-box {
+        margin: 40px;
+        h1 {
+          margin: 40px 0 15px;
+        }
+        p {
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  #booking {
+    top: 5250px;
+    .right-food-img {
+      width: 450px !important;
+      img {
+        width: 200px;
+      }
+    }
+    .booking-for-food {
+      margin-left: 7px !important;
+    }
+  }
+  footer {
+    top: 6400px;
+  }
+}
+
+
+// SCREEN 420px
+@media screen and (max-width: 420px) {
+  #review {
+    .cookReview {
+      h1 {
+        font-size: 28px !important;
+      }
+      p {
+        width: 250px !important;
+      }
+    }
+    .dish {
+      img {
+        width: 250px;
+      }
+    }
+  }
+
+  #ingredients {
+    top: 1750px;
+  }
+
+  #lambdaMenus {
+    top: 2500px;
+    .special01::before,
+    .special02::before {
+      top: 88px !important;
+    }
+  }
+
+  #guestReviews {
+    top: 4600px;
+  }
+
+  #booking {
+    top: 5375px;
+    .booking-card {
+      margin-left: 10px !important;
+      .right-food-img {
+        width: 350px !important;
+        margin: 0 5px;
+        img {
+          width: 150px;
+        }
+      }
+      .booking-for-food {
+        width: 350px;
+        .right-food {
+          p {
+            width: 330px;
+          }
+        }
+        .booking-form {
+          width: 350px;
+          form {
+            input {
+              width: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    top: 6500px;
+  }
+}
+
+/* :: STYLES End :: */
