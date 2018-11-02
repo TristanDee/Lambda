@@ -11,4 +11,4 @@ Screen break-points are set at -
     500px
     420px
  
- Site deployed at 
+ Site deployed at https://hardcore-pare-7562d8.netlify.com/
